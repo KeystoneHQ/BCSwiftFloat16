@@ -28,6 +28,16 @@ public typealias OSFloat16 = Float16
 #endif
 ```
 
+Your application can use a similar strategy so you can control which implementation you are using for development and testing purposes:
+
+```swift
+#if (my-condition)
+public typealias MyAppFloat16 = BCFloat16
+#else
+public typealias MyAppFloat16 = Float16
+#endif
+```
+
 ## Financial Support
 
 `BCSwiftFloat16` is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
