@@ -27,16 +27,16 @@ public struct BCFloat16: Equatable {
         return exponent == 0b11111 && significand != 0
     }
     
-    init(_ other: Float) {
+    public init(_ other: Float) {
         self.bitPattern = f32bitsToF16bits(other.bitPattern)
     }
     
-    init(_ other: Double) {
+    public init(_ other: Double) {
         self.init(Float(other))
     }
     
     public static prefix func -(rhs: BCFloat16) -> BCFloat16 {
-        fatalError()
+        BCFloat16(bitPattern: rhs.bitPattern ^ 0x8000)
     }
     
     public var isNegative: Bool { Float(self) < 0 }
