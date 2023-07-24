@@ -1,10 +1,6 @@
 import Foundation
 
-#if ((os(macOS) || targetEnvironment(macCatalyst)) && arch(x86_64))
 public typealias OSFloat16 = BCFloat16
-#else
-public typealias OSFloat16 = Float16
-#endif
 
 public struct BCFloat16: Equatable {
     public let bitPattern: UInt16
